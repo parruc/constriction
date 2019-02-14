@@ -5,5 +5,5 @@ chown www-data:www-data /var/www/static/ -R
 chown www-data:www-data /var/www/media/ -R
 /project/bin/python manage.py makemigrations
 /project/bin/python manage.py migrate
-/project/bin/python manage.py compilemessages
-chown www-data:www-data /var/log/django -R
+#/project/bin/python manage.py makemessages --all
+#/project/bin/python manage.py compilemessages
