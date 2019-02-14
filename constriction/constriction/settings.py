@@ -47,6 +47,7 @@ WSGI_APPLICATION = DJANGO_WSGI_APPLICATION
 
 # Application definition
 INSTALLED_APPS = [
+    'investments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
