@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 
 import os
 
+from django.utils.translation import gettext_lazy as _
+
 from .basesettings import DB_NAME
 from .basesettings import DB_PASSWORD
 from .basesettings import DB_USER
@@ -57,6 +59,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -122,9 +125,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('it', _('Italian')),
+    ('en', _('English')),
+]
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'it'
+
+TIME_ZONE = 'Europe/Rome'
 
 USE_I18N = True
 

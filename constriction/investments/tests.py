@@ -21,7 +21,20 @@ class TestMainNavigation(TestCase):
     def setUp(self):
         self.client = Client()
 
+    def test_languages(self):
+        english = self.client.get('/en/', follow=True)
+        self.assertTrue(english.status_code, 200)
+        self.assertTemplateUsed(english, 'home.html')
+        italian = self.client.get('/it/', follow=True)
+        self.assertTrue(italian.status_code, 200)
+        self.assertTemplateUsed(italian, 'home.html')
+
     def test_homepage(self):
-        homepage = self.client.get('/')
+        homepage = self.client.get('/', follow=True)
         self.assertTrue(homepage.status_code, 200)
         self.assertTemplateUsed(homepage, 'home.html')
+
+    def test_investments(self):
+        homepage = self.client.get('/investments', follow=True)
+        self.assertTrue(homepage.status_code, 200)
+        self.assertTemplateUsed(homepage, 'investments/baseinvestment_list.html')
