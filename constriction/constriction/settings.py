@@ -50,6 +50,10 @@ WSGI_APPLICATION = DJANGO_WSGI_APPLICATION
 # Application definition
 INSTALLED_APPS = [
     'investments',
+    'autoslug',
+    'compressor',
+    'modeltranslation',
+    'sorl.thumbnail',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -81,6 +85,9 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -130,6 +137,8 @@ LANGUAGES = [
     ('en', _('English')),
 ]
 
+MODELTRANSLATION_AUTO_POPULATE = 'all'
+
 LANGUAGE_CODE = 'it'
 
 TIME_ZONE = 'Europe/Rome'
@@ -150,6 +159,26 @@ STATIC_ROOT = '/var/www/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/var/www/media/'
 
+#COMPRESSOR
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter',
+]
+
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
+
+#CACHE
+
 if not DEVELOPMENT:
     CACHES = {
         'default': {
@@ -166,3 +195,29 @@ else:
             'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+        },
+    },
+}
+
+# MANAGERS
+ADMINS = (
+    ("Matteo Parrucci", "matteo@constriction.com", ),
+    ("Roberto Malcotti", "roberto@constriction.com", ),
+    ("Luca Franchini", "luca@constriction.com", ),
+    ("Gianfilippo Napolitano", "gianfilippo@gmaconstrictionil.com", ),
+)
+
+MANAGERS = ADMINS
