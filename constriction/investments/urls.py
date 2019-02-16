@@ -18,6 +18,6 @@ from django.utils.translation import gettext as _
 from investments import views
 
 urlpatterns = [
-    path(_('investments'), views.InvestmentsView.as_view(), name='index'),
-    path(_(''), views.HomePageView.as_view(), name='index'),
+    path(_('investments'), views.InvestmentsView.as_view(), name='investments'),
+    path(_(''), views.HomePageView.as_view(), name='home'),
 ]

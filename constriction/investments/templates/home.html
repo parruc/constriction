@@ -3,5 +3,24 @@
 {% load i18n %}
 
 {% block content %}
-    <h1>{% trans "Home Page" %}</h1>
+<div class="container-fluid no-padding">
+    <div class="hp-image">
+        <div class="hp-form yellow-background">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="{% trans 'Quanto vuoi investire?' %}" aria-label="{% trans 'Quanto vuoi investire' %}" aria-describedby="basic-addon2" />
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary btn-light" type="button">Vai</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hp-payload yellow-background">
+        <div class="container">
+            <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="#" class="hp-helpbutton btn btn-dark">{% trans "Possiamo aiutarti" %}</a>
+    </div>
+</div>
 {% endblock %}
