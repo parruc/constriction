@@ -1,0 +1,17 @@
+.hp-image{width: 100%; height: 600px; background-image: url("https://picsum.photos/1600/400/?blur"); background-size: cover; position: relative;}  
+.hp-form {position: absolute; top: 50%; width: 400px; height: 100px;}
+.hp-form .input-group {padding: 25px 10px;}
+.hp-payload {padding: 50px 0px;}
+.hp-description {margin-top: 50px;}
+.hp-helpbutton .btn {position: relative; bottom: 20px; }
+.hp-boxes {margin-top: 50px; margin-bottom: 75px;}
+.hp-boxes i.fas { background-color: #333; color: #fed03d; line-height:75px; height:75px;  width:75px; margin:20px 0px 10px 0px;}
+.hp-convex {width: 100%; height: 600px; background-image: url("https://picsum.photos/1600/400/?blur"); background-size: cover; position: relative;}
+.hp-convex .convex-content {padding-top: 150px; text-align: center;}
+.hp-convex:before, .hp-convex:after { height: 150px; content:""; position:absolute; background:white; width: 100%;}
+.hp-convex:before { top: -75px; border-radius: 0px 0px 100% 100%; }
+.hp-convex:after { bottom: -75px; border-radius:100% 100% 0px 0px; }
+.hp-convex i.fas, .hp-convex h3 {color: #fed03d;}
+.hp-convex p {color: lightgrey;}
+.hp-investments {margin-top: 75px;}
+.hp-investments .filter.selected {background-color: #fed03d;}

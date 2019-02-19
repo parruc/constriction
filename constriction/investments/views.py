@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
-from investments.models import BaseInvestment
+from investments.models import Investment
 
 
 class HomePageView(TemplateView):
@@ -8,5 +8,5 @@ class HomePageView(TemplateView):
 
 
 class InvestmentsView(ListView):
-    model = BaseInvestment
+    model = Investment
     paginate_by = 10

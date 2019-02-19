@@ -2,6 +2,10 @@
 
 {% load i18n %}
 
+{% block specific_css %}
+    <link href="{{ STATIC_URL }}css/hp.css" rel="stylesheet" />
+{% endblock specific_css %}
+
 {% block content %}
 <div class="container-fluid no-padding">
     <div class="hp-image">
@@ -37,28 +41,28 @@
             autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem
             eum fugiat quo voluptas nulla pariatur?</p>
         <div class="hp-boxes row">
-            <div class="col-sm">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="container grey-background rounded">
                     <i class="fas fa-building fa-2x rounded-circle"></i>
                     <h3>Aaaaa</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="container grey-background rounded">
                     <i class="fas fa-sync-alt fa-2x rounded-circle"></i>
                     <h3>Bbbbb</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="container grey-background rounded">
                     <i class="fas fa-home fa-2x rounded-circle"></i>
                     <h3>Ccccc</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="container grey-background rounded">
                     <i class="fas fa-truck fa-2x rounded-circle"></i>
                     <h3>Ddddd</h3>
@@ -66,6 +70,44 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="hp-convex container-fluid no-padding">
+        <div class="convex-content container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <i class="fas fa-suitcase fa-4x"></i>
+                    <h3>3534</h3>
+                    <p class="text-uppercase">Offerte finanziarie</p>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <i class="fas fa-building fa-4x"></i>
+                    <h3>896</h3>
+                    <p class="text-uppercase">Offerte immobiliari</p>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <i class="fas fa-users fa-4x"></i>
+                    <h3>172</h3>
+                    <p class="text-uppercase">Utenti registrati</p>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <i class="fas fa-globe fa-4x"></i>
+                    <h3>19</h3>
+                    <p class="text-uppercase">Paesi coninvolti</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hp-investments text-center">
+        <h2 class="underlined">{% trans "Esplora gli ultimi annunci" %}</h2>
+        <div class="text-left">
+            <span class="filter text-uppercase selected">{% trans "Tutti" %}</span>
+            <span class="filter text-uppercase">{% trans "Immobiliare" %}</span>
+            <span class="filter text-uppercase">{% trans "Finanziario" %}</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-6"></div>
+            <div class="col-lg-4 col-6"></div>
+            <div class="col-lg-4 col-6"></div>
     </div>
 </div>
 {% endblock %}

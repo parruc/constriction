@@ -50,6 +50,7 @@ WSGI_APPLICATION = DJANGO_WSGI_APPLICATION
 # Application definition
 INSTALLED_APPS = [
     'layout',
+    'importer',
     'investments',
     'autoslug',
     'compressor',
