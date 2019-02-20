@@ -15,3 +15,4 @@
 .hp-convex p {color: lightgrey;}
 .hp-investments {margin-top: 75px;}
 .hp-investments .filter.selected {background-color: #fed03d;}
+.hp-investments h3 {position:absolute; background-color: lightgray;}

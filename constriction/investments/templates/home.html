@@ -105,9 +105,14 @@
             <span class="filter text-uppercase">{% trans "Finanziario" %}</span>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-6"></div>
-            <div class="col-lg-4 col-6"></div>
-            <div class="col-lg-4 col-6"></div>
+            {% for investment in investments %}
+                <div class="col-lg-4 col-6 no-padding">
+                    <h3 class="text-center">{{ investment.title }}</h3>
+                    <img class="responsive-image" src="https://picsum.photos/400/400/?blur"/>
+                </div>
+            {% endfor %}
+        </div>
     </div>
+    <br /><br /><br /><br /><br />
 </div>
 {% endblock %}
