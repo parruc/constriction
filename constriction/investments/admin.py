@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Investment
+
+
+class InvestmentAdmin(admin.ModelAdmin):
+    class Meta:
+        model = Investment
+
+
+admin.site.register(Investment, InvestmentAdmin)
