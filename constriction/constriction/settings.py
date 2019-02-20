@@ -186,9 +186,6 @@ if not DEVELOPMENT:
         'default': {
             'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
             'LOCATION': 'memcached:11211',
-            'OPTIONS': {
-                'MAX_ENTRIES': 2000
-            }
         }
     }
 else:
