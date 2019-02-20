@@ -8,9 +8,11 @@ class HomePageView(ListView):
     model = Investment
     paginate_by = 3
     context_object_name = "investments"
+    ordering = ['-created']
 
 
 class InvestmentsView(ListView):
     model = Investment
     paginate_by = 15
     context_object_name = "investments"
+    ordering = ['-created']
